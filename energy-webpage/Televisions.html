@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVision - Televisions</title>
+    <link rel="stylesheet" href="/energy-webpage/css/Televisions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="ecommerce-header">
+        <!-- Top banner -->
+        <div class="top-banner">
+            <div class="container">
+                <div class="banner-content">
+                    <div class="marquee-container">
+                        <div class="marquee-text">
+                            🎬 Welcome to TechVision - Energy-Efficient TVs for Australian Homes | Save Up to 40% on Energy Bills! 📺
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Bar -->
+        <nav class="main-nav">
+            <div class="container">
+                <div class="nav-content">
+                    <!-- Logo with Power Symbol -->
+                    <div class="logo" id="logo">
+                        <span class="logo-text">
+                            <i class="fas fa-bolt"></i> TechVision
+                        </span>
+                    </div>
+                    
+                    <!-- Navigation Menu -->
+                    <ul class="nav-menu">
+                        <li><a href="Home.html" class="nav-link">Home</a></li>
+                        <li><a href="Televisions.html" class="nav-link active">Televisions</a></li>
+                        <li><a href="About.html" class="nav-link">About Us</a></li>
+                    </ul>
+                    
+                    <!-- Search Container -->
+                    <div class="search-container">
+                        <div class="search-wrapper" id="searchWrapper">
+                            <button class="search-icon-btn" id="searchToggle">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <div class="search-expandable" id="searchExpandable">
+                                <form class="search-form" id="searchForm">
+                                    <input type="text" placeholder="Search TVs..." class="search-input" id="searchInput">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Login/Register Buttons -->
+                    <div class="auth-buttons">
+                        <a href="#" class="btn-login">
+                            <i class="fas fa-user"></i> Login
+                        </a>
+                        <a href="#" class="btn-register">
+                            <i class="fas fa-user-plus"></i> Register
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <div class="mobile-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="page-content">
+        <div class="container">
+            <h1>Energy-Efficient Televisions</h1>
+            <p>Discover our range of high-performance TVs with excellent energy ratings for Australian homes.</p>
+            
+            <div class="energy-rating-guide">
+                <h2>Australian Energy Rating Guide</h2>
+                <div class="rating-grid">
+                    <div class="rating-item">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <h3>1-2 Stars</h3>
+                        <p>Basic efficiency: 200+ kWh/year</p>
+                    </div>
+                    <div class="rating-item">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <h3>3-4 Stars</h3>
+                        <p>Good efficiency: 120-180 kWh/year</p>
+                    </div>
+                    <div class="rating-item highlight">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <h3>5-6 Stars</h3>
+                        <p>Best efficiency: 80-100 kWh/year</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tv-listings">
+                <div class="tv-card">
+                    <i class="fas fa-tv"></i>
+                    <h3>Samsung Energy Saver 4K</h3>
+                    <div class="stars">⭐⭐⭐⭐⭐ (5 Stars)</div>
+                    <p>Annual energy use: 95 kWh | Saves $55/year</p>
+                    <button class="view-details" onclick="showDetails('Samsung Energy Saver')">View Details</button>
+                </div>
+                <div class="tv-card">
+                    <i class="fas fa-tv"></i>
+                    <h3>LG Eco OLED</h3>
+                    <div class="stars">⭐⭐⭐⭐⭐⭐ (6 Stars)</div>
+                    <p>Annual energy use: 82 kWh | Saves $72/year</p>
+                    <button class="view-details" onclick="showDetails('LG Eco OLED')">View Details</button>
+                </div>
+                <div class="tv-card">
+                    <i class="fas fa-tv"></i>
+                    <h3>Sony Green Smart TV</h3>
+                    <div class="stars">⭐⭐⭐⭐ (4 Stars)</div>
+                    <p>Annual energy use: 145 kWh | Saves $35/year</p>
+                    <button class="view-details" onclick="showDetails('Sony Green Smart TV')">View Details</button>
+                </div>
+                <div class="tv-card">
+                    <i class="fas fa-tv"></i>
+                    <h3>Hisense Eco Pro</h3>
+                    <div class="stars">⭐⭐⭐⭐⭐ (5 Stars)</div>
+                    <p>Annual energy use: 88 kWh | Saves $60/year</p>
+                    <button class="view-details" onclick="showDetails('Hisense Eco Pro')">View Details</button>
+                </div>
+            </div>
+            
+            <div id="tvDetails" class="tv-details-modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeDetails()">&times;</span>
+                    <h3 id="tvName"></h3>
+                    <p id="tvInfo"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2024 TechVision | Created by [Your Name] | AI-assisted content generation</p>
+        </div>
+    </footer>
+    
+    <script src="/energy-webpage/js/Televisions.js"></script>
+</body>
+</html>

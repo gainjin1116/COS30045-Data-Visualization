@@ -1,0 +1,144 @@
+/* Import base styles from Home.css */
+@import url('Home.css');
+
+/* About Page Specific Styles */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.about-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-card i {
+    font-size: 40px;
+    color: #ff4444;
+    margin-bottom: 15px;
+}
+
+.about-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.about-card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Energy Impact Section */
+.energy-impact {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.energy-impact h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.impact-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+}
+
+.impact-card i {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.impact-card h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.impact-card p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Contact Info */
+.contact-info {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 40px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 15px 0;
+    color: #333;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #ff4444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-grid, .impact-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .energy-impact h2 {
+        font-size: 1.5rem;
+    }
+    
+    .impact-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-info {
+        padding: 25px;
+    }
+    
+    .contact-info h2 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-info p {
+        font-size: 1rem;
+    }
+}

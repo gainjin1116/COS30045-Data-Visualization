@@ -95,6 +95,47 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    // Animate numbers on scroll
+    const impactCards = document.querySelectorAll('.impact-card h3');
+    
+    function animateNumbers() {
+        impactCards.forEach(card => {
+            const text = card.textContent;
+            const number = parseInt(text.replace(/[^0-9]/g, ''));
+            const suffix = text.replace(/[0-9+]/g, '');
+            
+            if (number && !card.hasAttribute('data-animated')) {
+                let current = 0;
+                const increment = number / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= number) {
+                        card.textContent = number.toLocaleString() + suffix;
+                        clearInterval(timer);
+                        card.setAttribute('data-animated', 'true');
+                    } else {
+                        card.textContent = Math.floor(current).toLocaleString() + suffix;
+                    }
+                }, 20);
+            }
+        });
+    }
+    
+    // Check if impact section is in view
+    const impactSection = document.querySelector('.energy-impact');
+    if (impactSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(impactSection);
+    }
+    
     // Window resize handler
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {

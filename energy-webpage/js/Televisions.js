@@ -129,3 +129,35 @@ document.addEventListener('DOMContentLoaded', function() {
         authButtons.style.display = 'none';
     }
 });
+
+// Show TV details modal
+function showDetails(tvName) {
+    const modal = document.getElementById('tvDetails');
+    const tvNameElement = document.getElementById('tvName');
+    const tvInfoElement = document.getElementById('tvInfo');
+    
+    const details = {
+        'Samsung Energy Saver': '5-star energy rating | 95 kWh/year | Saves $55 annually | 4K QLED display with Eco Sensor | Auto power-saving mode',
+        'LG Eco OLED': '6-star energy rating | 82 kWh/year | Saves $72 annually | Self-lit OLED pixels for perfect black levels | Energy-optimized brightness',
+        'Sony Green Smart TV': '4-star energy rating | 145 kWh/year | Saves $35 annually | Advanced backlight control | Motion-activated power saving',
+        'Hisense Eco Pro': '5-star energy rating | 88 kWh/year | Saves $60 annually | UHD with ambient light sensor | Intelligent power management'
+    };
+    
+    tvNameElement.textContent = tvName;
+    tvInfoElement.textContent = details[tvName] || 'Energy-efficient TV with excellent Australian energy rating. Helps reduce your carbon footprint while delivering premium picture quality.';
+    modal.style.display = 'flex';
+}
+
+// Close modal
+function closeDetails() {
+    const modal = document.getElementById('tvDetails');
+    modal.style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('tvDetails');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+}
