@@ -1,195 +1,404 @@
-/* Import base styles from Home.css */
+/* Televisions Page Styles */
 @import url('Home.css');
 
-/* TV Page Specific Styles */
-.energy-rating-guide {
-    margin: 40px 0;
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin: 40px 0 30px;
 }
 
-.energy-rating-guide h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 1.8rem;
+.page-header h1 {
+    font-size: 2.2rem;
     color: #000;
+    margin-bottom: 12px;
 }
 
-.rating-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.rating-item {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.rating-item:hover {
-    transform: translateY(-5px);
-}
-
-.rating-item i {
-    font-size: 20px;
-    color: #ffc107;
-    margin-bottom: 10px;
-}
-
-.rating-item.highlight {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
-
-.rating-item.highlight i {
-    color: #ffc107;
-}
-
-.rating-item h3 {
-    margin: 10px 0;
-    font-size: 1.3rem;
-}
-
-/* TV Listings */
-.tv-listings {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin: 40px 0;
-}
-
-.tv-card {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
-
-.tv-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.tv-card i {
-    font-size: 40px;
-    color: #000;
-    margin-bottom: 15px;
-}
-
-.tv-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #222;
-}
-
-.tv-card .stars {
-    font-size: 18px;
-    margin: 10px 0;
-    color: #ffc107;
-}
-
-.tv-card p {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 10px 0;
-}
-
-.view-details {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
-}
-
-.view-details:hover {
-    background-color: #ff4444;
-    transform: translateY(-2px);
-}
-
-/* Modal Styles */
-.tv-details-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 400px;
-    width: 90%;
-    position: relative;
-    animation: slideIn 0.3s ease;
-    text-align: center;
-}
-
-.modal-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #000;
-}
-
-.modal-content p {
+.page-header p {
     font-size: 1rem;
     color: #666;
-    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    cursor: pointer;
+/* Loading Indicator */
+.loading-indicator {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 1.1rem;
     color: #666;
-    transition: color 0.3s ease;
 }
 
-.close-modal:hover {
+.loading-indicator i {
+    margin-right: 10px;
     color: #000;
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
+/* Sidebar Layout */
+.content-layout {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Vertical Filter Sidebar */
+.filter-sidebar {
+    flex: 0 0 280px;
+}
+
+.filter-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 20px;
+}
+
+.filter-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f0f0f0;
+    color: #333;
+}
+
+.filter-card h3 i {
+    margin-right: 8px;
+    color: #000;
+}
+
+.filter-group-vertical {
+    margin-bottom: 20px;
+}
+
+.filter-group-vertical label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.85rem;
+}
+
+.filter-group-vertical label i {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.filter-group-vertical input,
+.filter-group-vertical select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.filter-group-vertical input:focus,
+.filter-group-vertical select:focus {
+    outline: none;
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.filter-stats {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.stats-box {
+    text-align: center;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.stats-box i {
+    font-size: 1.5rem;
+    color: #000;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.stats-box span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    display: block;
+    line-height: 1;
+}
+
+.stats-box small {
+    font-size: 0.75rem;
+    color: #666;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Table Container */
+.table-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.tv-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.tv-table thead {
+    background: #f8f9fa;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.tv-table th {
+    padding: 16px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tv-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+.tv-table tr:hover {
+    background: #fafafa;
+}
+
+.tv-table td:first-child,
+.tv-table th:first-child {
+    padding-left: 20px;
+}
+
+.tv-table td:last-child,
+.tv-table th:last-child {
+    padding-right: 20px;
+}
+
+.tv-table td:first-child {
+    font-weight: 600;
+    color: #000;
+}
+
+/* Energy Star Badge */
+.energy-star-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #2ecc71;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.energy-star-badge i {
+    font-size: 0.65rem;
+}
+
+.non-certified {
+    color: #999;
+    font-size: 0.75rem;
+}
+
+/* Star Rating */
+.star-rating {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 4px;
+}
+
+/* Annual Cost Highlight */
+.cost-highlight {
+    font-weight: 600;
+    color: #e67e22;
+}
+
+/* Error Message */
+.error-message {
+    background: #fee;
+    border-left: 4px solid #e74c3c;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #c0392b;
+    margin-bottom: 20px;
+}
+
+.error-message i {
+    font-size: 1.2rem;
+}
+
+.error-message p {
+    margin: 0;
+    flex: 1;
+}
+
+/* Cost Note */
+.cost-note {
+    background: #fff3e0;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.8rem;
+    color: #856404;
+}
+
+.cost-note i {
+    font-size: 1rem;
+}
+
+/* Rating Guide */
+.rating-guide {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.rating-guide h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.rating-guide h3 i {
+    margin-right: 10px;
+    color: #f39c12;
+}
+
+.rating-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rating-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.85rem;
+}
+
+.rating-bar-item span:first-child {
+    width: 90px;
+    font-weight: 500;
+}
+
+.rating-bar-item .bar {
+    flex: 1;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.rating-bar-item .fill {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.rating-bar-item span:last-child {
+    width: 100px;
+    color: #666;
+    font-size: 0.75rem;
+}
+
+/* No Results Message */
+.no-results {
+    text-align: center;
+    padding: 60px 20px !important;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .content-layout {
+        flex-direction: column;
     }
-    to {
-        transform: translateY(0);
-        opacity: 1;
+    
+    .filter-sidebar {
+        flex: auto;
+    }
+    
+    .filter-card {
+        position: static;
+    }
+    
+    .filter-group-vertical {
+        margin-bottom: 15px;
     }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-    .rating-grid, .tv-listings {
-        grid-template-columns: 1fr;
+    .page-header h1 {
+        font-size: 1.6rem;
     }
     
-    .energy-rating-guide h2 {
-        font-size: 1.5rem;
+    .tv-table th {
+        font-size: 0.7rem;
+        padding: 12px 8px;
     }
     
-    .modal-content {
-        margin: 20px;
-        padding: 20px;
+    .tv-table td {
+        padding: 10px 8px;
+        font-size: 0.75rem;
+    }
+    
+    .rating-bar-item {
+        flex-wrap: wrap;
+    }
+    
+    .rating-bar-item span:first-child {
+        width: 80px;
+    }
+    
+    .rating-bar-item .bar {
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tv-table td,
+    .tv-table th {
+        padding: 8px 6px;
+        font-size: 0.7rem;
+    }
+    
+    .energy-star-badge {
+        padding: 2px 6px;
+        font-size: 0.6rem;
     }
 }
