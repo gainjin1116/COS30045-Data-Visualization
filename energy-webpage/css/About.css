@@ -1,7 +1,7 @@
 /* Import base styles from Home.css */
 @import url('Home.css');
 
-/* About Page Specific Styles */
+/* About Page Specific Styles - Green Theme */
 .about-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -11,33 +11,33 @@
 
 .about-card {
     background: white;
-    padding: 30px;
-    border-radius: 10px;
+    padding: 35px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 }
 
 .about-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .about-card i {
-    font-size: 40px;
-    color: #ff4444;
-    margin-bottom: 15px;
+    font-size: 45px;
+    color: #1e4a2f;
+    margin-bottom: 18px;
 }
 
 .about-card h3 {
     font-size: 1.3rem;
     margin-bottom: 15px;
-    color: #222;
+    color: #1e4a2f;
 }
 
 .about-card p {
     font-size: 0.95rem;
-    color: #666;
+    color: #555;
     line-height: 1.6;
 }
 
@@ -49,22 +49,22 @@
 
 .energy-impact h2 {
     font-size: 1.8rem;
-    margin-bottom: 30px;
-    color: #000;
+    margin-bottom: 35px;
+    color: #1e4a2f;
 }
 
 .impact-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
     margin-top: 30px;
 }
 
 .impact-card {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e4a2f 0%, #2e7d32 100%);
     color: white;
-    padding: 30px;
-    border-radius: 10px;
+    padding: 30px 20px;
+    border-radius: 12px;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -74,35 +74,90 @@
 }
 
 .impact-card i {
-    font-size: 40px;
+    font-size: 42px;
     margin-bottom: 15px;
 }
 
 .impact-card h3 {
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-weight: 700;
 }
 
 .impact-card p {
     font-size: 0.9rem;
-    opacity: 0.9;
+    opacity: 0.95;
+}
+
+/* Energy Commitment Section */
+.energy-commitment {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.energy-commitment h2 {
+    font-size: 1.8rem;
+    margin-bottom: 35px;
+    color: #1e4a2f;
+}
+
+.energy-commitment h2 i {
+    margin-right: 12px;
+    color: #ff9800;
+}
+
+.commitment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.commitment-item {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.commitment-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.commitment-item i {
+    font-size: 40px;
+    color: #1e4a2f;
+    margin-bottom: 18px;
+}
+
+.commitment-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #2c3e2f;
+}
+
+.commitment-item p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
 }
 
 /* Contact Info */
 .contact-info {
     background: white;
-    padding: 40px;
-    border-radius: 10px;
+    padding: 45px;
+    border-radius: 12px;
     text-align: center;
     margin: 40px 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .contact-info h2 {
     font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #000;
+    margin-bottom: 25px;
+    color: #1e4a2f;
 }
 
 .contact-info p {
@@ -112,17 +167,48 @@
 }
 
 .contact-info i {
-    margin-right: 10px;
-    color: #ff4444;
+    margin-right: 12px;
+    color: #1e4a2f;
+    width: 25px;
+}
+
+.social-links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    color: #1e4a2f;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #1e4a2f;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.social-links i {
+    margin: 0;
+    font-size: 1.2rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .about-grid, .impact-stats {
+    .about-grid, .impact-stats, .commitment-grid {
         grid-template-columns: 1fr;
     }
     
-    .energy-impact h2 {
+    .energy-impact h2, .energy-commitment h2 {
         font-size: 1.5rem;
     }
     
@@ -131,7 +217,7 @@
     }
     
     .contact-info {
-        padding: 25px;
+        padding: 30px 20px;
     }
     
     .contact-info h2 {
@@ -139,6 +225,15 @@
     }
     
     .contact-info p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .social-links {
+        gap: 15px;
+    }
+    
+    .social-links a {
+        width: 35px;
+        height: 35px;
     }
 }
