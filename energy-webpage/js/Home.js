@@ -1,5 +1,6 @@
+// DOM content loaded event handler for initializing features
 document.addEventListener('DOMContentLoaded', function() {
-    // Logo click handler
+    // Logo click handler - navigates to home page
     const logo = document.getElementById('logo');
     if (logo) {
         logo.addEventListener('click', function() {
@@ -7,29 +8,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Mobile menu toggle
+    // GenAI: Mobile menu toggle functionality - (fixed version - previously got issue)
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const authButtons = document.querySelector('.auth-buttons');
     
-    if (mobileToggle) {
+    if (mobileToggle && navMenu && authButtons) {
         mobileToggle.addEventListener('click', function() {
-            const isOpen = navMenu.style.display === 'flex';
-            navMenu.style.display = isOpen ? 'none' : 'flex';
-            authButtons.style.display = isOpen ? 'none' : 'flex';
+            // Toggle mobile-visible class on navMenu
+            navMenu.classList.toggle('mobile-visible');
+            authButtons.classList.toggle('mobile-visible');
             
+            // Toggle icon between hamburger and times
             const icon = this.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-            
-            if (!isOpen && window.innerWidth <= 768) {
-                navMenu.style.cssText = 'flex-direction:column; position:absolute; top:100%; left:0; right:0; background:white; padding:20px; box-shadow:0 10px 20px rgba(0,0,0,0.1); gap:15px; z-index:1000;';
-                authButtons.style.cssText = 'flex-direction:column; position:absolute; top:calc(100% + 180px); left:0; right:0; background:white; padding:20px; box-shadow:0 10px 20px rgba(0,0,0,0.1); gap:15px; z-index:1000;';
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
             }
         });
     }
     
-    // Search functionality
+    // GenAI: Search expandable functionality for energy tips
     const searchToggle = document.getElementById('searchToggle');
     const searchExpandable = document.getElementById('searchExpandable');
     const searchWrapper = document.getElementById('searchWrapper');
@@ -44,12 +43,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
+        // GenAI: Close search when clicking outside (desktop only)
         document.addEventListener('click', function(event) {
             if (window.innerWidth > 768 && searchWrapper && !searchWrapper.contains(event.target)) {
                 searchExpandable.classList.remove('expanded');
             }
         });
         
+        // GenAI: Handle search submission with energy-saving context
         if (searchInput) {
             searchInput.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter' && searchInput.value.trim()) {
@@ -62,25 +63,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Window resize handler
+    // GenAI: Window resize handler - reset mobile menu when resizing to desktop
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
-            if (navMenu) navMenu.style.cssText = '';
-            if (authButtons) authButtons.style.cssText = '';
+            // Remove mobile-visible classes and reset icons
+            if (navMenu) navMenu.classList.remove('mobile-visible');
+            if (authButtons) authButtons.classList.remove('mobile-visible');
+            
             const icon = document.querySelector('.mobile-toggle i');
             if (icon) {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
             }
-        } else {
-            if (navMenu && !navMenu.style.display) navMenu.style.display = 'none';
-            if (authButtons && !authButtons.style.display) authButtons.style.display = 'none';
         }
     });
-    
-    // Initial setup
-    if (window.innerWidth <= 768) {
-        if (navMenu) navMenu.style.display = 'none';
-        if (authButtons) authButtons.style.display = 'none';
-    }
 });

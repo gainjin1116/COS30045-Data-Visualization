@@ -87,7 +87,7 @@
 
             <!-- Sidebar Layout -->
             <div class="content-layout">
-                <!-- Vertical Filter Sidebar -->
+                <!-- GenAI Vertical Filter Sidebar -->
                 <aside class="filter-sidebar" id="filterSidebar" style="display: none;">
                     <div class="filter-card">
                         <h3><i class="fas fa-filter"></i> Filter Results</h3>
@@ -125,7 +125,7 @@
 
                 <!-- Main Content Area -->
                 <div class="main-content">
-                    <!-- TV Data Table -->
+                    <!-- GenAI - TV Data Table -->
                     <div class="table-container" id="tableContainer" style="display: none;">
                         <div class="table-responsive">
                             <table class="tv-table" id="tvTable">
@@ -151,7 +151,7 @@
                         </div>
                     </div>
 
-                    <!-- Error Message -->
+                    <!-- GenAI Error Message -->
                     <div id="errorMessage" class="error-message" style="display: none;">
                         <i class="fas fa-exclamation-triangle"></i>
                         <p>Unable to load TV data. Please make sure the CSV file exists at <strong>data/tv.csv</strong></p>
@@ -161,43 +161,6 @@
                     <div class="cost-note" id="costNote" style="display: none;">
                         <i class="fas fa-info-circle"></i>
                         <p>*Annual cost calculated at $0.30/kWh (average Australian electricity rate). Based on 5 hours of daily use.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Energy Rating Guide -->
-            <div class="rating-guide">
-                <h3><i class="fas fa-chart-simple"></i> Understanding Energy Ratings</h3>
-                <div class="rating-bars">
-                    <div class="rating-bar-item">
-                        <span>6 Stars (Best)</span>
-                        <div class="bar"><div class="fill" style="width: 100%; background: #2ecc71;"></div></div>
-                        <span>< 100 kWh/year</span>
-                    </div>
-                    <div class="rating-bar-item">
-                        <span>5 Stars</span>
-                        <div class="bar"><div class="fill" style="width: 83%; background: #27ae60;"></div></div>
-                        <span>100-120 kWh/year</span>
-                    </div>
-                    <div class="rating-bar-item">
-                        <span>4 Stars</span>
-                        <div class="bar"><div class="fill" style="width: 66%; background: #f39c12;"></div></div>
-                        <span>120-180 kWh/year</span>
-                    </div>
-                    <div class="rating-bar-item">
-                        <span>3 Stars</span>
-                        <div class="bar"><div class="fill" style="width: 50%; background: #e67e22;"></div></div>
-                        <span>180-250 kWh/year</span>
-                    </div>
-                    <div class="rating-bar-item">
-                        <span>2 Stars</span>
-                        <div class="bar"><div class="fill" style="width: 33%; background: #e74c3c;"></div></div>
-                        <span>250-350 kWh/year</span>
-                    </div>
-                    <div class="rating-bar-item">
-                        <span>1 Star</span>
-                        <div class="bar"><div class="fill" style="width: 16%; background: #c0392b;"></div></div>
-                        <span>> 350 kWh/year</span>
                     </div>
                 </div>
             </div>

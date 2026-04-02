@@ -166,49 +166,122 @@
     color: #333;
 }
 
-.contact-info i {
-    margin-right: 12px;
-    color: #1e4a2f;
-    width: 25px;
-}
+/* ============================================ */
+/* GenAI: Mobile Responsive Styles */
+/* ============================================ */
 
-.social-links {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: #f0f0f0;
-    border-radius: 50%;
-    color: #1e4a2f;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    background: #1e4a2f;
-    color: white;
-    transform: translateY(-3px);
-}
-
-.social-links i {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-/* Responsive */
+/* Mobile Styles - Screen width 768px and below */
 @media (max-width: 768px) {
-    .about-grid, .impact-stats, .commitment-grid {
+    /* Hide desktop navigation elements by default (inherited from Home.css) */
+    .nav-menu, 
+    .auth-buttons {
+        display: none !important;
+    }
+    
+    /* Show mobile toggle button */
+    .mobile-toggle {
+        display: block !important;
+    }
+    
+    /* Adjust nav content for mobile */
+    .nav-content {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    
+    /* Logo on mobile */
+    .logo {
+        order: 1;
+    }
+    
+    /* Search container on mobile */
+    .search-container {
+        order: 2;
+        margin-left: auto;
+        display: block !important;
+    }
+    
+    /* Mobile toggle order */
+    .mobile-toggle {
+        order: 3;
+        margin-left: 10px;
+    }
+    
+    /* Search wrapper on mobile */
+    .search-wrapper {
+        background: #2c3e2f;
+        border-radius: 25px;
+    }
+    
+    /* Mobile search expandable */
+    .search-expandable {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 0;
+        background: white;
+        z-index: 1001;
+        transition: height 0.3s ease;
+        border-radius: 0;
+    }
+    
+    .search-expandable.expanded {
+        width: 100%;
+        height: 60px;
+    }
+    
+    .search-expandable.expanded .search-form {
+        width: 100%;
+        padding: 10px 15px;
+        background: white;
+    }
+    
+    .search-input {
+        color: #333;
+        background: white;
+    }
+    
+    /* Mobile menu open styles (applied by JavaScript) */
+    .nav-menu.mobile-visible {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        gap: 15px;
+        z-index: 1000;
+        order: 5;
+    }
+    
+    .auth-buttons.mobile-visible {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: calc(100% + 200px);
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        gap: 15px;
+        z-index: 1000;
+    }
+    
+    /* About page specific responsive adjustments */
+    .about-grid, 
+    .impact-stats, 
+    .commitment-grid {
         grid-template-columns: 1fr;
     }
     
-    .energy-impact h2, .energy-commitment h2 {
+    .energy-impact h2, 
+    .energy-commitment h2 {
         font-size: 1.5rem;
     }
     
@@ -226,14 +299,5 @@
     
     .contact-info p {
         font-size: 0.95rem;
-    }
-    
-    .social-links {
-        gap: 15px;
-    }
-    
-    .social-links a {
-        width: 35px;
-        height: 35px;
     }
 }

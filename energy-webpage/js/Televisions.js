@@ -1,11 +1,11 @@
-// Electricity rate in AUD per kWh
+// GenAI: Electricity rate in AUD per kWh
 const ELECTRICITY_RATE = 0.30;
 
-// Global variables
+// GenAI: Global variables
 let tvData = [];
 let displayTypes = new Set();
 
-// Parse CSV data
+// GenAI: Parse CSV data into JavaScript objects
 function parseCSV(csvText) {
     const lines = csvText.trim().split('\n');
     const headers = lines[0].split(',');
@@ -43,7 +43,7 @@ function parseCSV(csvText) {
     return data;
 }
 
-// Get star rating based on annual energy consumption
+// GenAI: Get star rating based on annual energy consumption
 function getStarRating(annualKWh) {
     if (annualKWh <= 100) return "★★★★★★";
     if (annualKWh <= 120) return "★★★★★";
@@ -53,12 +53,12 @@ function getStarRating(annualKWh) {
     return "★";
 }
 
-// Calculate annual cost
+// GenAI: Calculate annual cost based on electricity rate
 function calculateAnnualCost(annualKWh) {
     return (annualKWh * ELECTRICITY_RATE).toFixed(2);
 }
 
-// Render the table
+// GenAI: Render the TV table with current filters
 function renderTable() {
     const searchInput = document.getElementById('tvSearchInput');
     const energyFilter = document.getElementById('energyFilter');
@@ -113,16 +113,16 @@ function renderTable() {
             <tr>
                 <td><strong>${tv.brand}</strong></td>
                 <td>${tv.model}</td>
-                <td>${tv.size}"</td>
-                <td>${tv.displayType}</td>
-                <td>${tv.powerWatts} W</td>
-                <td>${tv.standbyWatts} W</td>
+                <td>${tv.size}"</span></td>
+                <td>${tv.displayType}</span></td>
+                <td>${tv.powerWatts} W</span></td>
+                <td>${tv.standbyWatts} W</span></td>
                 <td>
                     ${tv.annualKWh} kWh<br>
                     <span class="star-rating">${starRating}</span>
-                </td>
-                <td>${energyStarBadge}</td>
-                <td class="cost-highlight">$${annualCost}/year</td>
+                </span></td>
+                <td>${energyStarBadge}</span></td>
+                <td class="cost-highlight">$${annualCost}/year</span></td>
             </tr>
         `;
     }
@@ -130,7 +130,7 @@ function renderTable() {
     tableBody.innerHTML = html;
 }
 
-// Load CSV data from file
+// GenAI: Load CSV data from file
 async function loadCSVData() {
     const loadingIndicator = document.getElementById('loadingIndicator');
     const filterSidebar = document.getElementById('filterSidebar');
@@ -198,7 +198,7 @@ async function loadCSVData() {
     }
 }
 
-// Setup event listeners
+// GenAI: Setup event listeners for filters, mobile menu, and header search
 function setupEventListeners() {
     // Filter controls
     const searchInput = document.getElementById('tvSearchInput');
@@ -225,71 +225,27 @@ function setupEventListeners() {
         });
     }
     
-    // Mobile menu toggle
+    // GenAI: Mobile menu toggle functionality - Previously got issue (Fix by GenAI)
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const authButtons = document.querySelector('.auth-buttons');
     
-    if (mobileToggle) {
+    if (mobileToggle && navMenu && authButtons) {
         mobileToggle.addEventListener('click', function() {
-            if (navMenu) {
-                if (navMenu.style.display === 'flex') {
-                    navMenu.style.display = 'none';
-                } else {
-                    navMenu.style.display = 'flex';
-                }
-            }
+            // Toggle mobile-visible class on navMenu
+            navMenu.classList.toggle('mobile-visible');
+            authButtons.classList.toggle('mobile-visible');
             
-            if (authButtons) {
-                if (authButtons.style.display === 'flex') {
-                    authButtons.style.display = 'none';
-                } else {
-                    authButtons.style.display = 'flex';
-                }
-            }
-            
-            // Toggle icon
+            // Toggle icon between hamburger and times
             const icon = this.querySelector('i');
             if (icon) {
-                if (icon.classList.contains('fa-bars')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            }
-            
-            // Mobile styles
-            if (window.innerWidth <= 768 && navMenu && navMenu.style.display === 'flex') {
-                navMenu.style.flexDirection = 'column';
-                navMenu.style.position = 'absolute';
-                navMenu.style.top = '100%';
-                navMenu.style.left = '0';
-                navMenu.style.right = '0';
-                navMenu.style.backgroundColor = 'white';
-                navMenu.style.padding = '20px';
-                navMenu.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-                navMenu.style.gap = '15px';
-                navMenu.style.zIndex = '1000';
-                
-                if (authButtons) {
-                    authButtons.style.flexDirection = 'column';
-                    authButtons.style.position = 'absolute';
-                    authButtons.style.top = 'calc(100% + 180px)';
-                    authButtons.style.left = '0';
-                    authButtons.style.right = '0';
-                    authButtons.style.backgroundColor = 'white';
-                    authButtons.style.padding = '20px';
-                    authButtons.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-                    authButtons.style.gap = '15px';
-                    authButtons.style.zIndex = '1000';
-                }
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
             }
         });
     }
     
-    // Header search functionality
+    // GenAI: Header search expandable functionality
     const searchToggle = document.getElementById('searchToggle');
     const searchExpandable = document.getElementById('searchExpandable');
     const searchWrapper = document.getElementById('searchWrapper');
@@ -298,94 +254,49 @@ function setupEventListeners() {
     if (searchToggle && searchExpandable && searchWrapper) {
         searchToggle.addEventListener('click', function(e) {
             e.stopPropagation();
-            
+            searchExpandable.classList.toggle('expanded');
             if (searchExpandable.classList.contains('expanded')) {
-                searchExpandable.classList.remove('expanded');
-                searchWrapper.classList.remove('search-expanded');
-            } else {
-                searchExpandable.classList.add('expanded');
-                searchWrapper.classList.add('search-expanded');
-                
-                setTimeout(function() {
-                    if (headerSearchInput) {
-                        headerSearchInput.focus();
-                    }
-                }, 300);
+                setTimeout(() => headerSearchInput?.focus(), 300);
             }
         });
         
-        // Close search on click outside
+        // Close search on click outside (desktop only)
         document.addEventListener('click', function(event) {
-            if (window.innerWidth > 768) {
-                if (!searchWrapper.contains(event.target) && searchExpandable.classList.contains('expanded')) {
-                    searchExpandable.classList.remove('expanded');
-                    searchWrapper.classList.remove('search-expanded');
-                }
+            if (window.innerWidth > 768 && searchWrapper && !searchWrapper.contains(event.target)) {
+                searchExpandable.classList.remove('expanded');
             }
         });
         
         // Handle search input
         if (headerSearchInput) {
             headerSearchInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' && headerSearchInput.value.trim() !== '') {
+                if (e.key === 'Enter' && headerSearchInput.value.trim()) {
                     e.preventDefault();
-                    alert('Searching for: ' + headerSearchInput.value);
+                    alert(`🔍 Searching: "${headerSearchInput.value}" - Find energy-saving TVs on our Televisions page!`);
                     searchExpandable.classList.remove('expanded');
-                    searchWrapper.classList.remove('search-expanded');
                     headerSearchInput.value = '';
                 }
             });
         }
     }
     
-    // Window resize handler
+    // GenAI: Window resize handler - reset mobile menu when resizing to desktop
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
-            if (navMenu) {
-                navMenu.style.display = 'flex';
-                navMenu.style.flexDirection = 'row';
-                navMenu.style.position = 'static';
-                navMenu.style.backgroundColor = 'transparent';
-                navMenu.style.padding = '0';
-                navMenu.style.boxShadow = 'none';
-            }
-            
-            if (authButtons) {
-                authButtons.style.display = 'flex';
-                authButtons.style.flexDirection = 'row';
-                authButtons.style.position = 'static';
-                authButtons.style.backgroundColor = 'transparent';
-                authButtons.style.padding = '0';
-                authButtons.style.boxShadow = 'none';
-            }
+            // Remove mobile-visible classes and reset icons
+            if (navMenu) navMenu.classList.remove('mobile-visible');
+            if (authButtons) authButtons.classList.remove('mobile-visible');
             
             const icon = document.querySelector('.mobile-toggle i');
             if (icon) {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
             }
-        } else {
-            if (navMenu) {
-                navMenu.style.display = 'none';
-            }
-            if (authButtons) {
-                authButtons.style.display = 'none';
-            }
         }
     });
-    
-    // Initial mobile setup
-    if (window.innerWidth <= 768) {
-        if (navMenu) {
-            navMenu.style.display = 'none';
-        }
-        if (authButtons) {
-            authButtons.style.display = 'none';
-        }
-    }
 }
 
-// Initialize page when DOM is ready
+// GenAI: Initialize page when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     loadCSVData();

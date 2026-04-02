@@ -73,8 +73,10 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 25px;
+    position: relative;
 }
 
+/* Logo */
 .logo {
     cursor: pointer;
     flex-shrink: 0;
@@ -91,7 +93,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Navigation Menu */
+/* Navigation Menu - Desktop */
 .nav-menu {
     display: flex;
     list-style: none;
@@ -257,11 +259,20 @@ body {
     color: #ccc;
 }
 
+/* Mobile Toggle Button */
 .mobile-toggle {
     display: none;
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
     color: #2c3e2f;
+    background: none;
+    border: none;
+    padding: 8px;
+    z-index: 1002;
+}
+
+.mobile-toggle:hover {
+    color: #1e4a2f;
 }
 
 /* Main Content */
@@ -335,7 +346,7 @@ h1 {
     margin: 50px 0;
 }
 
-.tips-section h2, .featured-products h2 {
+.tips-section h2 {
     font-size: 1.8rem;
     color: #1e4a2f;
     margin-bottom: 30px;
@@ -378,7 +389,7 @@ h1 {
 }
 
 /* Promo Banner */
-.promo-banner {
+.comparison-banner {
     background: linear-gradient(135deg, #1e4a2f 0%, #2e7d32 100%);
     border-radius: 15px;
     padding: 45px;
@@ -387,16 +398,16 @@ h1 {
     margin-top: 50px;
 }
 
-.promo-content i {
+.comparison-content i {
     font-size: 2.5rem;
 }
 
-.promo-content h2 {
+.comparison-content h2 {
     font-size: 1.8rem;
     margin: 15px 0 10px;
 }
 
-.promo-content p {
+.comparison-content p {
     font-size: 1rem;
     margin-bottom: 8px;
     opacity: 0.95;
@@ -408,7 +419,7 @@ h1 {
     margin: 10px 0;
 }
 
-.promo-btn {
+.comparison-btn {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 32px;
@@ -420,7 +431,7 @@ h1 {
     transition: all 0.3s ease;
 }
 
-.promo-btn:hover {
+.comparison-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
@@ -440,7 +451,10 @@ footer p {
     opacity: 0.9;
 }
 
-/* Responsive */
+/* ============================================ */
+/* GenAI: Mobile Responsive Styles */
+/* ============================================ */
+
 @media (max-width: 1024px) {
     .search-expandable.expanded {
         width: 200px;
@@ -469,26 +483,50 @@ footer p {
     }
 }
 
+/* Mobile Styles - Screen width 768px and below */
 @media (max-width: 768px) {
-    .nav-menu, .auth-buttons, .search-container {
-        display: none;
+    /* Hide desktop navigation elements by default */
+    .nav-menu, 
+    .auth-buttons {
+        display: none !important;
     }
     
+    /* Show mobile toggle button */
     .mobile-toggle {
-        display: block;
-        order: 3;
+        display: block !important;
     }
     
+    /* Adjust nav content for mobile */
+    .nav-content {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    
+    /* Logo on mobile */
+    .logo {
+        order: 1;
+    }
+    
+    /* Search container on mobile */
     .search-container {
         order: 2;
         margin-left: auto;
         display: block !important;
     }
     
-    .search-wrapper {
-        background: transparent;
+    /* Mobile toggle order */
+    .mobile-toggle {
+        order: 3;
+        margin-left: 10px;
     }
     
+    /* Search wrapper on mobile */
+    .search-wrapper {
+        background: #2c3e2f;
+        border-radius: 25px;
+    }
+    
+    /* Mobile search expandable */
     .search-expandable {
         position: fixed;
         top: 0;
@@ -518,6 +556,37 @@ footer p {
         background: white;
     }
     
+    /* Mobile menu open styles (applied by JavaScript) */
+    .nav-menu.mobile-visible {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        gap: 15px;
+        z-index: 1000;
+        order: 5;
+    }
+    
+    .auth-buttons.mobile-visible {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: calc(100% + 200px);
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        gap: 15px;
+        z-index: 1000;
+    }
+    
+    /* Typography adjustments */
     h1 {
         font-size: 1.8rem;
     }
@@ -526,7 +595,8 @@ footer p {
         font-size: 1rem;
     }
     
-    .energy-stats, .tips-grid, .product-grid {
+    .energy-stats, 
+    .tips-grid {
         grid-template-columns: 1fr;
     }
     
