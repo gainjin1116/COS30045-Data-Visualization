@@ -221,7 +221,7 @@ function setupEventListeners() {
     const logo = document.getElementById('logo');
     if (logo) {
         logo.addEventListener('click', function() {
-            window.location.href = 'Home.html';
+            window.location.href = 'home.html';
         });
     }
     
