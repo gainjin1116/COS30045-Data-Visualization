@@ -2,7 +2,8 @@
 // CONFIGURATION & GLOBAL VARIABLES
 // ============================================
 
-const ELECTRICITY_RATE = 0.30; // AUD per kWh
+// GenAI: Electricity rate in AUD per kWh
+const ELECTRICITY_RATE = 0.30;
 let tvData = [];
 let displayTypes = new Set();
 let currentPage = 'home';
@@ -11,7 +12,7 @@ let currentPage = 'home';
 // UTILITY FUNCTIONS
 // ============================================
 
-// Parse CSV data
+// GenAI: Parse CSV data into JavaScript objects
 function parseCSV(csvText) {
     const lines = csvText.trim().split('\n');
     const headers = lines[0].split(',');
@@ -58,7 +59,7 @@ function parseCSV(csvText) {
     return data;
 }
 
-// Get star rating based on annual energy
+// GenAI: Get star rating based on annual energy consumption
 function getStarRating(annualKWh) {
     if (annualKWh <= 100) return "★★★★★★";
     if (annualKWh <= 120) return "★★★★★";
@@ -68,7 +69,7 @@ function getStarRating(annualKWh) {
     return "★";
 }
 
-// Calculate annual cost
+// GenAI: Calculate annual cost based on electricity rate
 function calculateAnnualCost(annualKWh) {
     return (annualKWh * ELECTRICITY_RATE).toFixed(2);
 }
@@ -107,8 +108,9 @@ function navigateTo(page) {
     window.scrollTo(0, 0);
 }
 
+// GenAI: Setup navigation event handlers
 function setupNavigation() {
-    // Logo click
+    // GenAI: Logo click handler - navigates to home page
     const logo = document.getElementById('logo');
     if (logo) {
         logo.addEventListener('click', () => navigateTo('home'));
@@ -140,6 +142,7 @@ function setupNavigation() {
 // MOBILE MENU
 // ============================================
 
+// GenAI: Mobile menu toggle functionality - Previously got issue (Fix by GenAI)
 function setupMobileMenu() {
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
@@ -158,7 +161,7 @@ function setupMobileMenu() {
         });
     }
     
-    // Reset on resize to desktop
+    // GenAI: Window resize handler - reset mobile menu when resizing to desktop
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
             navMenu.classList.remove('mobile-visible');
@@ -177,6 +180,7 @@ function setupMobileMenu() {
 // SEARCH FUNCTIONALITY
 // ============================================
 
+// GenAI: Search expandable functionality for energy tips
 function setupSearch() {
     const searchToggle = document.getElementById('searchToggle');
     const searchExpandable = document.getElementById('searchExpandable');
@@ -192,14 +196,14 @@ function setupSearch() {
             }
         });
         
-        // Close on click outside (desktop only)
+        // GenAI: Close search when clicking outside (desktop only)
         document.addEventListener('click', function(event) {
             if (window.innerWidth > 768 && searchWrapper && !searchWrapper.contains(event.target)) {
                 searchExpandable.classList.remove('expanded');
             }
         });
         
-        // Handle search submission
+        // GenAI: Handle search submission with energy-saving context
         if (searchInput) {
             searchInput.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter' && searchInput.value.trim()) {
@@ -217,6 +221,7 @@ function setupSearch() {
 // TELEVISIONS PAGE - TV DATA & TABLE
 // ============================================
 
+// GenAI: Render the TV table with current filters
 function renderTable() {
     const searchInput = document.getElementById('tvSearchInput');
     const energyFilter = document.getElementById('energyFilter');
@@ -282,6 +287,7 @@ function renderTable() {
     tableBody.innerHTML = html;
 }
 
+// GenAI: Load CSV data from file
 async function loadCSVData() {
     const loadingIndicator = document.getElementById('loadingIndicator');
     const filterSidebar = document.getElementById('filterSidebar');
@@ -340,6 +346,7 @@ async function loadCSVData() {
     }
 }
 
+// GenAI: Setup event listeners for filters
 function setupTelevisionsFilters() {
     const searchInput = document.getElementById('tvSearchInput');
     const energyFilter = document.getElementById('energyFilter');
@@ -354,9 +361,11 @@ function setupTelevisionsFilters() {
 // ABOUT PAGE - ANIMATIONS
 // ============================================
 
+// GenAI: Setup animations for About page statistics
 function setupAboutAnimations() {
     const impactCards = document.querySelectorAll('.impact-card h3');
     
+    // GenAI: Animate numbers on scroll - Energy Impact Stats
     function animateNumbers() {
         impactCards.forEach(card => {
             if (card.hasAttribute('data-animated')) return;
@@ -383,6 +392,7 @@ function setupAboutAnimations() {
         });
     }
     
+    // GenAI: Check if impact section is in view using Intersection Observer
     const impactSection = document.querySelector('.energy-impact');
     if (impactSection) {
         const observer = new IntersectionObserver((entries) => {
@@ -402,6 +412,7 @@ function setupAboutAnimations() {
 // INITIALIZATION
 // ============================================
 
+// GenAI: Initialize page when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     setupNavigation();
     setupMobileMenu();

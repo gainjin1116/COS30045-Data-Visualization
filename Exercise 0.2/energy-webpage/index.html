@@ -47,6 +47,7 @@
                             <button class="search-icon-btn" id="searchToggle">
                                 <i class="fas fa-search"></i>
                             </button>
+                            <!-- GenAI: Expandable search container for energy tips -->
                             <div class="search-expandable" id="searchExpandable">
                                 <form class="search-form" id="searchForm">
                                     <input type="text" placeholder="Search energy tips..." class="search-input" id="searchInput">
@@ -66,6 +67,7 @@
                     </div>
 
                     <!-- Mobile Toggle -->
+                    <!-- GenAI: Mobile menu toggle button - fixed version -->
                     <div class="mobile-toggle" id="mobileToggle">
                         <i class="fas fa-bars"></i>
                     </div>
@@ -153,13 +155,14 @@
                 </div>
 
                 <!-- Loading -->
+                <!-- GenAI: Loading indicator for CSV data fetch -->
                 <div id="loadingIndicator" class="loading-indicator" style="display: none;">
                     <i class="fas fa-spinner fa-spin"></i> Loading TV data...
                 </div>
 
                 <!-- Sidebar Layout -->
                 <div class="content-layout">
-                    <!-- Filter Sidebar -->
+                    <!-- GenAI: Vertical Filter Sidebar -->
                     <aside class="filter-sidebar" id="filterSidebar" style="display: none;">
                         <div class="filter-card">
                             <h3><i class="fas fa-filter"></i> Filter Results</h3>
@@ -197,7 +200,7 @@
 
                     <!-- Main Content -->
                     <div class="main-content">
-                        <!-- Table -->
+                        <!-- GenAI: TV Data Table -->
                         <div class="table-container" id="tableContainer" style="display: none;">
                             <div class="table-responsive">
                                 <table class="tv-table" id="tvTable">
@@ -223,7 +226,7 @@
                             </div>
                         </div>
 
-                        <!-- Error -->
+                        <!-- GenAI: Error Message -->
                         <div id="errorMessage" class="error-message" style="display: none;">
                             <i class="fas fa-exclamation-triangle"></i>
                             <p>Unable to load TV data. Please make sure the CSV file exists at <strong>data/tv.csv</strong></p>
