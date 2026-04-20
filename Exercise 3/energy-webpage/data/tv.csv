@@ -1,0 +1,11 @@
+Brand,Model,Screen_Size_inches,Display_Type,Power_Consumption_Watts,Standby_Power_Watts,Annual_Energy_Consumption_kWh,Energy_Star_Certified
+Samsung,QN90C,65,QLED,185,0.5,275,Yes
+LG,C3 OLED,55,OLED,120,0.3,180,Yes
+Sony,X90L,75,LED,220,0.4,330,Yes
+TCL,S546,50,LED,95,0.5,142,No
+Vizio,MQ6,70,LED,165,0.4,248,Yes
+Hisense,U8H,85,Mini-LED,295,0.6,442,No
+Panasonic,LZ2000,65,OLED,140,0.3,210,Yes
+Samsung,AU8000,43,LED,80,0.4,120,No
+LG,UP8000,86,LED,250,0.5,375,Yes
+Sony,A80K,77,OLED,190,0.3,285,Yes

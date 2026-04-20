@@ -1,0 +1,1159 @@
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8f9fa;
+    color: #2c3e2f;
+    line-height: 1.6;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Top Banner */
+.top-banner {
+    background: #1e4a2f;
+    color: white;
+    padding: 12px 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.banner-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 22s linear infinite;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.marquee-container:hover .marquee-text {
+    animation-play-state: paused;
+}
+
+/* Navigation */
+.main-nav {
+    background: white;
+    padding: 18px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.logo-image {
+    height: 42px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-image {
+    transform: scale(1.05);
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #2c3e2f;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: #1e4a2f;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #1e4a2f;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #1e4a2f;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    width: 100%;
+    background: #1e4a2f;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.btn-login, .btn-register {
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-login {
+    background: transparent;
+    color: #2c3e2f;
+    border: 1px solid #ddd;
+}
+
+.btn-login:hover {
+    background: #f0f0f0;
+    border-color: #1e4a2f;
+    transform: translateY(-2px);
+}
+
+.btn-register {
+    background: #1e4a2f;
+    color: white;
+    border: 1px solid #1e4a2f;
+}
+
+.btn-register:hover {
+    background: #0f3a22;
+    transform: translateY(-2px);
+}
+
+/* Search */
+.search-container {
+    position: relative;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    background: #2c3e2f;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    padding: 2px;
+}
+
+.search-icon-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-icon-btn:hover {
+    background: #3e5a40;
+    transform: scale(1.05);
+}
+
+/* GenAI: Expandable search container */
+.search-expandable {
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    height: 36px;
+}
+
+.search-expandable.expanded {
+    width: 220px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 220px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    height: 100%;
+}
+
+.search-expandable.expanded .search-form {
+    opacity: 1;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0 12px;
+    border: none;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    color: white;
+    height: 100%;
+}
+
+.search-input::placeholder {
+    color: #ccc;
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #2c3e2f;
+    background: none;
+    border: none;
+    padding: 8px;
+    z-index: 1002;
+}
+
+.mobile-toggle:hover {
+    color: #1e4a2f;
+}
+
+/* Main Content & Page Sections */
+.page-content {
+    padding: 50px 0;
+    text-align: center;
+    min-height: calc(100vh - 400px);
+}
+
+.page-section {
+    display: none;
+}
+
+.page-section.active {
+    display: block;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1e4a2f;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.page-content > .container > .page-section > p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 750px;
+    margin: 0 auto 40px;
+}
+
+/* ============================================
+   HOME PAGE STYLES
+   ============================================ */
+
+/* Energy Stats */
+.energy-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.stat-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+}
+
+.stat-box i {
+    font-size: 42px;
+    color: #1e4a2f;
+    margin-bottom: 15px;
+}
+
+.stat-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #2c3e2f;
+}
+
+.stat-box p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1e4a2f;
+    margin: 5px 0;
+}
+
+.stat-box small {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Tips Section */
+.tips-section {
+    margin: 50px 0;
+}
+
+.tips-section h2 {
+    font-size: 1.8rem;
+    color: #1e4a2f;
+    margin-bottom: 30px;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.tip-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.tip-card:hover {
+    transform: translateY(-3px);
+}
+
+.tip-card i {
+    font-size: 38px;
+    color: #ff9800;
+    margin-bottom: 15px;
+}
+
+.tip-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #2c3e2f;
+}
+
+.tip-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Comparison Banner */
+.comparison-banner {
+    background: linear-gradient(135deg, #1e4a2f 0%, #2e7d32 100%);
+    border-radius: 15px;
+    padding: 45px;
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}
+
+.comparison-content i {
+    font-size: 2.5rem;
+}
+
+.comparison-content h2 {
+    font-size: 1.8rem;
+    margin: 15px 0 10px;
+}
+
+.comparison-content p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    opacity: 0.95;
+}
+
+.savings-highlight {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.comparison-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 32px;
+    background: white;
+    color: #1e4a2f;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.comparison-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ============================================
+   TELEVISIONS PAGE STYLES
+   ============================================ */
+
+.page-header {
+    text-align: center;
+    margin: 40px 0 30px;
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.page-header p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* GenAI: Loading indicator */
+.loading-indicator {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.loading-indicator i {
+    margin-right: 10px;
+    color: #000;
+}
+
+/* Sidebar Layout */
+.content-layout {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+/* GenAI: Vertical Filter Sidebar */
+.filter-sidebar {
+    flex: 0 0 280px;
+}
+
+.filter-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 20px;
+}
+
+.filter-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f0f0f0;
+    color: #333;
+}
+
+.filter-card h3 i {
+    margin-right: 8px;
+    color: #000;
+}
+
+.filter-group-vertical {
+    margin-bottom: 20px;
+}
+
+.filter-group-vertical label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.85rem;
+}
+
+.filter-group-vertical label i {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.filter-group-vertical input,
+.filter-group-vertical select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.filter-group-vertical input:focus,
+.filter-group-vertical select:focus {
+    outline: none;
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.filter-stats {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.stats-box {
+    text-align: center;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.stats-box i {
+    font-size: 1.5rem;
+    color: #000;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.stats-box span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    display: block;
+    line-height: 1;
+}
+
+.stats-box small {
+    font-size: 0.75rem;
+    color: #666;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* GenAI: TV Data Table */
+.table-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.tv-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.tv-table thead {
+    background: #f8f9fa;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.tv-table th {
+    padding: 16px 12px;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tv-table td {
+    padding: 14px 12px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+.tv-table tr:hover {
+    background: #fafafa;
+}
+
+.tv-table td:first-child,
+.tv-table th:first-child {
+    padding-left: 20px;
+}
+
+.tv-table td:last-child,
+.tv-table th:last-child {
+    padding-right: 20px;
+}
+
+.tv-table td:first-child {
+    font-weight: 600;
+    color: #000;
+}
+
+/* Energy Star Badge */
+.energy-star-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #2ecc71;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.energy-star-badge i {
+    font-size: 0.65rem;
+}
+
+.non-certified {
+    color: #999;
+    font-size: 0.75rem;
+}
+
+/* Star Rating */
+.star-rating {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 4px;
+}
+
+/* Cost Highlight */
+.cost-highlight {
+    font-weight: 600;
+    color: #e67e22;
+}
+
+/* GenAI: Error Message */
+.error-message {
+    background: #fee;
+    border-left: 4px solid #e74c3c;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #c0392b;
+    margin-bottom: 20px;
+}
+
+.error-message i {
+    font-size: 1.2rem;
+}
+
+.error-message p {
+    margin: 0;
+    flex: 1;
+}
+
+.cost-note {
+    background: #fff3e0;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.8rem;
+    color: #856404;
+}
+
+.cost-note i {
+    font-size: 1rem;
+}
+
+.no-results {
+    text-align: center;
+    padding: 60px 20px !important;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   ABOUT PAGE STYLES
+   ============================================ */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.about-card {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-card i {
+    font-size: 45px;
+    color: #1e4a2f;
+    margin-bottom: 18px;
+}
+
+.about-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #1e4a2f;
+}
+
+.about-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Energy Impact */
+.energy-impact {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.energy-impact h2 {
+    font-size: 1.8rem;
+    margin-bottom: 35px;
+    color: #1e4a2f;
+}
+
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.impact-card {
+    background: linear-gradient(135deg, #1e4a2f 0%, #2e7d32 100%);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+}
+
+.impact-card i {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.impact-card h3 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.impact-card p {
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+/* Energy Commitment */
+.energy-commitment {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.energy-commitment h2 {
+    font-size: 1.8rem;
+    margin-bottom: 35px;
+    color: #1e4a2f;
+}
+
+.energy-commitment h2 i {
+    margin-right: 12px;
+    color: #ff9800;
+}
+
+.commitment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.commitment-item {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.commitment-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.commitment-item i {
+    font-size: 40px;
+    color: #1e4a2f;
+    margin-bottom: 18px;
+}
+
+.commitment-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #2c3e2f;
+}
+
+.commitment-item p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Contact Info */
+.contact-info {
+    background: white;
+    padding: 45px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 40px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #1e4a2f;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 15px 0;
+    color: #333;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    background: #1a2a1f;
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+/* ============================================
+   GenAI: Mobile Responsive Styles
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .search-expandable.expanded {
+        width: 200px;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-content {
+        flex-wrap: wrap;
+    }
+    
+    .nav-menu {
+        order: 4;
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    
+    .auth-buttons {
+        order: 2;
+        margin-left: auto;
+    }
+    
+    .search-container {
+        order: 3;
+    }
+}
+
+@media (max-width: 992px) {
+    .content-layout {
+        flex-direction: column;
+    }
+    
+    .filter-sidebar {
+        flex: auto;
+    }
+    
+    .filter-card {
+        position: static;
+    }
+    
+    .filter-group-vertical {
+        margin-bottom: 15px;
+    }
+}
+
+/* GenAI: Mobile Styles - Screen width 768px and below */
+@media (max-width: 768px) {
+    /* Hide desktop nav elements */
+    .nav-menu, 
+    .auth-buttons {
+        display: none !important;
+    }
+    
+    /* Show mobile toggle */
+    .mobile-toggle {
+        display: block !important;
+    }
+    
+    .nav-content {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    
+    .logo {
+        order: 1;
+    }
+    
+    .search-container {
+        order: 2;
+        margin-left: auto;
+        display: block !important;
+    }
+    
+    .mobile-toggle {
+        order: 3;
+        margin-left: 10px;
+    }
+    
+    .search-wrapper {
+        background: #2c3e2f;
+        border-radius: 25px;
+    }
+    
+    /* GenAI: Mobile search expandable */
+    .search-expandable {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 0;
+        background: white;
+        z-index: 1001;
+        transition: height 0.3s ease;
+        border-radius: 0;
+    }
+    
+    .search-expandable.expanded {
+        width: 100%;
+        height: 60px;
+    }
+    
+    .search-expandable.expanded .search-form {
+        width: 100%;
+        padding: 10px 15px;
+        background: white;
+    }
+    
+    .search-input {
+        color: #333;
+        background: white;
+    }
+    
+    /* GenAI: Mobile menu open styles (applied by JavaScript) */
+    .nav-menu.mobile-visible {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        gap: 15px;
+        z-index: 1000;
+        order: 5;
+    }
+    
+    .auth-buttons.mobile-visible {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: calc(100% + 200px);
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        gap: 15px;
+        z-index: 1000;
+    }
+    
+    /* Typography */
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-content > .container > .page-section > p {
+        font-size: 1rem;
+    }
+    
+    /* Home page grids */
+    .energy-stats, 
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-banner {
+        padding: 30px;
+    }
+    
+    .comparison-content h2 {
+        font-size: 1.4rem;
+    }
+    
+    /* Televisions page */
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .tv-table th {
+        font-size: 0.7rem;
+        padding: 12px 8px;
+    }
+    
+    .tv-table td {
+        padding: 10px 8px;
+        font-size: 0.75rem;
+    }
+    
+    /* GenAI: About page specific responsive adjustments */
+    .about-grid, 
+    .impact-stats, 
+    .commitment-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .energy-impact h2, 
+    .energy-commitment h2 {
+        font-size: 1.5rem;
+    }
+    
+    .impact-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-info {
+        padding: 30px 20px;
+    }
+    
+    .contact-info h2 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-info p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tv-table td,
+    .tv-table th {
+        padding: 8px 6px;
+        font-size: 0.7rem;
+    }
+    
+    .energy-star-badge {
+        padding: 2px 6px;
+        font-size: 0.6rem;
+    }
+}
