@@ -6,13 +6,12 @@
     <title>TechVision - Smart TV Energy Savings</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" href="images/logo.png">
 </head>
 <body>
     <!-- Header -->
     <header class="ecommerce-header">
-        <!-- Top banner -->
         <div class="top-banner">
             <div class="container">
                 <div class="banner-content">
@@ -25,29 +24,25 @@
             </div>
         </div>
         
-        <!-- Navigation Bar -->
         <nav class="main-nav">
             <div class="container">
                 <div class="nav-content">
-                    <!-- Logo -->
                     <div class="logo" id="logo">
                         <img src="images/logo.png" alt="TechVision Logo" class="logo-image">
                     </div>
                     
-                    <!-- Navigation Menu -->
                     <ul class="nav-menu" id="navMenu">
                         <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
                         <li><a href="#televisions" class="nav-link" data-page="televisions">Televisions</a></li>
+                        <li><a href="#storyboard" class="nav-link" data-page="storyboard">Storyboard</a></li>
                         <li><a href="#about" class="nav-link" data-page="about">About Us</a></li>
                     </ul>
                     
-                    <!-- Search -->
                     <div class="search-container">
                         <div class="search-wrapper" id="searchWrapper">
                             <button class="search-icon-btn" id="searchToggle">
                                 <i class="fas fa-search"></i>
                             </button>
-                            <!-- GenAI: Expandable search container for energy tips -->
                             <div class="search-expandable" id="searchExpandable">
                                 <form class="search-form" id="searchForm">
                                     <input type="text" placeholder="Search energy tips..." class="search-input" id="searchInput">
@@ -56,18 +51,11 @@
                         </div>
                     </div>
                     
-                    <!-- Auth Buttons -->
                     <div class="auth-buttons" id="authButtons">
-                        <a href="#" class="btn-login">
-                            <i class="fas fa-user"></i> Login
-                        </a>
-                        <a href="#" class="btn-register">
-                            <i class="fas fa-leaf"></i> Save Energy
-                        </a>
+                        <a href="#" class="btn-login"><i class="fas fa-user"></i> Login</a>
+                        <a href="#" class="btn-register"><i class="fas fa-leaf"></i> Save Energy</a>
                     </div>
 
-                    <!-- Mobile Toggle -->
-                    <!-- GenAI: Mobile menu toggle button - fixed version -->
                     <div class="mobile-toggle" id="mobileToggle">
                         <i class="fas fa-bars"></i>
                     </div>
@@ -76,7 +64,6 @@
         </nav>
     </header>
     
-    <!-- Main Content -->
     <main class="page-content">
         <div class="container">
             
@@ -85,56 +72,22 @@
                 <h1>Smart TV Energy Savings Guide</h1>
                 <p>Discover how to reduce your television power consumption, save money on electricity bills, and choose energy-efficient models for a greener home.</p>
                 
-                <!-- Energy Statistics -->
                 <div class="energy-stats">
-                    <div class="stat-box">
-                        <i class="fas fa-tv"></i>
-                        <h3>Average TV Energy Use</h3>
-                        <p>100-220 kWh/year</p>
-                        <small>Varies by size & technology</small>
-                    </div>
-                    <div class="stat-box">
-                        <i class="fas fa-coins"></i>
-                        <h3>Potential Savings</h3>
-                        <p>Up to $125/year</p>
-                        <small>With 6-star rated models</small>
-                    </div>
-                    <div class="stat-box">
-                        <i class="fas fa-star"></i>
-                        <h3>Energy Rating</h3>
-                        <p>★★★★★★ (6 Stars)</p>
-                        <small>Best efficiency available</small>
-                    </div>
+                    <div class="stat-box"><i class="fas fa-tv"></i><h3>Average TV Energy Use</h3><p>100-220 kWh/year</p><small>Varies by size & technology</small></div>
+                    <div class="stat-box"><i class="fas fa-coins"></i><h3>Potential Savings</h3><p>Up to $125/year</p><small>With 6-star rated models</small></div>
+                    <div class="stat-box"><i class="fas fa-star"></i><h3>Energy Rating</h3><p>★★★★★★ (6 Stars)</p><small>Best efficiency available</small></div>
                 </div>
                 
-                <!-- Tips -->
                 <div class="tips-section">
                     <h2><i class="fas fa-lightbulb"></i> Top Power-Saving Tips</h2>
                     <div class="tips-grid">
-                        <div class="tip-card">
-                            <i class="fas fa-sun"></i>
-                            <h3>Reduce Brightness</h3>
-                            <p>Lower backlight by 30% → saves up to 20% energy</p>
-                        </div>
-                        <div class="tip-card">
-                            <i class="fas fa-plug"></i>
-                            <h3>Unplug Standby Power</h3>
-                            <p>Standby wastes 5-15W. Use smart power strips</p>
-                        </div>
-                        <div class="tip-card">
-                            <i class="fas fa-chart-line"></i>
-                            <h3>Enable Eco Mode</h3>
-                            <p>Auto brightness & power saving features</p>
-                        </div>
-                        <div class="tip-card">
-                            <i class="fas fa-clock"></i>
-                            <h3>Use Sleep Timer</h3>
-                            <p>Auto shut-off prevents overnight waste</p>
-                        </div>
+                        <div class="tip-card"><i class="fas fa-sun"></i><h3>Reduce Brightness</h3><p>Lower backlight by 30% → saves up to 20% energy</p></div>
+                        <div class="tip-card"><i class="fas fa-plug"></i><h3>Unplug Standby Power</h3><p>Standby wastes 5-15W. Use smart power strips</p></div>
+                        <div class="tip-card"><i class="fas fa-chart-line"></i><h3>Enable Eco Mode</h3><p>Auto brightness & power saving features</p></div>
+                        <div class="tip-card"><i class="fas fa-clock"></i><h3>Use Sleep Timer</h3><p>Auto shut-off prevents overnight waste</p></div>
                     </div>
                 </div>
                 
-                <!-- Comparison Banner -->
                 <div class="comparison-banner">
                     <div class="comparison-content">
                         <i class="fas fa-charging-station"></i>
@@ -148,96 +101,168 @@
 
             <!-- TELEVISIONS PAGE -->
             <section id="televisions" class="page-section">
-                <!-- Page Header -->
                 <div class="page-header">
                     <h1>TV Power Consumption Comparison</h1>
                     <p>Compare energy usage, standby power, and annual costs to find the most efficient television for your home.</p>
                 </div>
 
-                <!-- Loading -->
-                <!-- GenAI: Loading indicator for CSV data fetch -->
                 <div id="loadingIndicator" class="loading-indicator" style="display: none;">
                     <i class="fas fa-spinner fa-spin"></i> Loading TV data...
                 </div>
 
-                <!-- Sidebar Layout -->
                 <div class="content-layout">
-                    <!-- GenAI: Vertical Filter Sidebar -->
                     <aside class="filter-sidebar" id="filterSidebar" style="display: none;">
                         <div class="filter-card">
                             <h3><i class="fas fa-filter"></i> Filter Results</h3>
-                            
-                            <div class="filter-group-vertical">
-                                <label><i class="fas fa-search"></i> Search</label>
-                                <input type="text" id="tvSearchInput" placeholder="Brand or model...">
-                            </div>
-                            
-                            <div class="filter-group-vertical">
-                                <label><i class="fas fa-certificate"></i> Energy Star</label>
-                                <select id="energyFilter">
-                                    <option value="all">All TVs</option>
-                                    <option value="Yes">Certified Only</option>
-                                    <option value="No">Non-Certified</option>
-                                </select>
-                            </div>
-                            
-                            <div class="filter-group-vertical">
-                                <label><i class="fas fa-tv"></i> Display Type</label>
-                                <select id="displayFilter">
-                                    <option value="all">All Types</option>
-                                </select>
-                            </div>
-                            
-                            <div class="filter-stats">
-                                <div class="stats-box">
-                                    <i class="fas fa-chart-line"></i>
-                                    <span id="tvCount">0</span>
-                                    <small>TVs Found</small>
-                                </div>
-                            </div>
+                            <div class="filter-group-vertical"><label><i class="fas fa-search"></i> Search</label><input type="text" id="tvSearchInput" placeholder="Brand or model..."></div>
+                            <div class="filter-group-vertical"><label><i class="fas fa-certificate"></i> Energy Star</label><select id="energyFilter"><option value="all">All TVs</option><option value="Yes">Certified Only</option><option value="No">Non-Certified</option></select></div>
+                            <div class="filter-group-vertical"><label><i class="fas fa-tv"></i> Display Type</label><select id="displayFilter"><option value="all">All Types</option></select></div>
+                            <div class="filter-stats"><div class="stats-box"><i class="fas fa-chart-line"></i><span id="tvCount">0</span><small>TVs Found</small></div></div>
                         </div>
                     </aside>
 
-                    <!-- Main Content -->
                     <div class="main-content">
-                        <!-- GenAI: TV Data Table -->
                         <div class="table-container" id="tableContainer" style="display: none;">
                             <div class="table-responsive">
-                                <table class="tv-table" id="tvTable">
-                                    <thead>
-                                        <tr>
-                                            <th>Brand</th>
-                                            <th>Model</th>
-                                            <th>Size</th>
-                                            <th>Display Type</th>
-                                            <th>Power</th>
-                                            <th>Standby</th>
-                                            <th>Annual Energy</th>
-                                            <th>Energy Star</th>
-                                            <th>Annual Cost*</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tableBody">
-                                        <tr>
-                                            <td colspan="9" class="no-results">Loading television data...</td>
-                                        </tr>
-                                    </tbody>
+                                <table class="tv-table">
+                                    <thead><tr><th>Brand</th><th>Model</th><th>Size</th><th>Display Type</th><th>Power</th><th>Standby</th><th>Annual Energy</th><th>Energy Star</th><th>Annual Cost*</th></tr></thead>
+                                    <tbody id="tableBody"><tr><td colspan="9" class="no-results">Loading television data...</td></tr></tbody>
                                 </table>
                             </div>
                         </div>
+                        <div id="errorMessage" class="error-message" style="display: none;"><i class="fas fa-exclamation-triangle"></i><p>Unable to load TV data. Please make sure the CSV file exists at <strong>data/tv.csv</strong></p></div>
+                        <div class="cost-note" id="costNote" style="display: none;"><i class="fas fa-info-circle"></i><p>*Annual cost calculated at $0.30/kWh (average Australian electricity rate). Based on 5 hours of daily use.</p></div>
+                    </div>
+                </div>
+            </section>
 
-                        <!-- GenAI: Error Message -->
-                        <div id="errorMessage" class="error-message" style="display: none;">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <p>Unable to load TV data. Please make sure the CSV file exists at <strong>data/tv.csv</strong></p>
+            <!-- STORYBOARD PAGE - Interactive TV Game UI -->
+            <section id="storyboard" class="page-section">
+                <div class="storyboard-wrapper">
+
+                    <!-- ===== TV STAND-BY SCREEN ===== -->
+                    <div class="tv-standby" id="tvStandby">
+                        <div class="storyboard-header">
+                            <h1>Energy Efficiency Storyboard</h1>
+                            <p>Turn on the TV and select a storyboard to explore our visual journey</p>
                         </div>
 
-                        <!-- Cost Note -->
-                        <div class="cost-note" id="costNote" style="display: none;">
-                            <i class="fas fa-info-circle"></i>
-                            <p>*Annual cost calculated at $0.30/kWh (average Australian electricity rate). Based on 5 hours of daily use.</p>
+                        <div class="tv-device">
+                            <!-- Remote Control -->
+                            <div class="tv-remote">
+                                <div class="remote-header">
+                                    <div class="remote-brand">TechVision</div>
+                                    <div class="remote-indicator"></div>
+                                </div>
+                                <div class="remote-body">
+                                    <button class="remote-btn power-btn" id="powerBtn" title="Power On">
+                                        <i class="fas fa-power-off"></i>
+                                    </button>
+                                    <div class="remote-divider"></div>
+                                    <div class="remote-label">Select Storyboard</div>
+                                    <button class="remote-btn game-btn active-game" id="game1Btn" disabled>
+                                        <div class="game-btn-icon"><i class="fas fa-bolt"></i></div>
+                                        <span>Chapter 1</span>
+                                    </button>
+                                    <button class="remote-btn game-btn" id="game2Btn" disabled>
+                                        <div class="game-btn-icon"><i class="fas fa-seedling"></i></div>
+                                        <span>Chapter 2</span>
+                                    </button>
+                                    <div class="remote-divider"></div>
+                                    <div class="remote-dpad">
+                                        <button class="dpad-btn dpad-up" disabled><i class="fas fa-chevron-up"></i></button>
+                                        <button class="dpad-btn dpad-left" disabled><i class="fas fa-chevron-left"></i></button>
+                                        <button class="dpad-btn dpad-center" disabled><i class="fas fa-circle"></i></button>
+                                        <button class="dpad-btn dpad-right" disabled><i class="fas fa-chevron-right"></i></button>
+                                        <button class="dpad-btn dpad-down" disabled><i class="fas fa-chevron-down"></i></button>
+                                    </div>
+                                    <button class="remote-btn back-btn" id="backBtn" disabled>
+                                        <i class="fas fa-undo"></i> Back
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- TV Screen -->
+                            <div class="tv-frame">
+                                <div class="tv-bezel">
+                                    <div class="tv-led" id="tvLed"></div>
+                                    <div class="tv-screen" id="tvScreen">
+                                        <!-- Off State -->
+                                        <div class="screen-off" id="screenOff">
+                                            <div class="off-icon"><i class="fas fa-power-off"></i></div>
+                                            <p>Press power to turn on</p>
+                                        </div>
+
+                                        <!-- Menu State -->
+                                        <div class="screen-menu" id="screenMenu">
+                                            <div class="menu-topbar">
+                                                <div class="menu-time" id="menuTime">12:00</div>
+                                                <div class="menu-icons">
+                                                    <i class="fas fa-wifi"></i>
+                                                    <i class="fas fa-signal"></i>
+                                                </div>
+                                            </div>
+                                            <div class="menu-content">
+                                                <div class="menu-welcome">
+                                                    <img src="images/logo.png" alt="Logo" class="menu-logo" onerror="this.style.display='none'">
+                                                    <h2>Welcome to TechVision</h2>
+                                                    <p>Select a storyboard chapter to begin</p>
+                                                </div>
+                                                <div class="menu-cards">
+                                                    <div class="menu-card" id="menuCard1" data-story="1">
+                                                        <div class="menu-card-thumb">
+                                                            <img src="images/storyboard1st_1.jpg" alt="Chapter 1" onerror="this.parentElement.innerHTML='<div class=\'menu-card-fallback\' style=\'background:linear-gradient(135deg,#e74c3c,#c0392b)\'><i class=\'fas fa-bolt\'></i></div>'">
+                                                        </div>
+                                                        <div class="menu-card-info">
+                                                            <div class="menu-card-badge">CHAPTER 1</div>
+                                                            <h3>The Technology Overview</h3>
+                                                            <p>What type of TV screen technologies are currently available in Australia, and which are the most frequent?</p>
+                                                            <div class="menu-card-meta">
+                                                                <span><i class="fas fa-images"></i> 6 Slides</span>
+                                                                <span><i class="fas fa-clock"></i> 2 min</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="menu-card" id="menuCard2" data-story="2">
+                                                        <div class="menu-card-thumb">
+                                                            <img src="images/storyboard2nd_1.jpg" alt="Chapter 2" onerror="this.parentElement.innerHTML='<div class=\'menu-card-fallback\' style=\'background:linear-gradient(135deg,#2ecc71,#27ae60)\'><i class=\'fas fa-seedling\'></i></div>'">
+                                                        </div>
+                                                        <div class="menu-card-info">
+                                                            <div class="menu-card-badge badge-green">CHAPTER 2</div>
+                                                            <h3>The Brand Leaderboard</h3>
+                                                            <p>Which brands have the greatest number of different models?</p>
+                                                            <div class="menu-card-meta">
+                                                                <span><i class="fas fa-images"></i> 6 Slides</span>
+                                                                <span><i class="fas fa-clock"></i> 2 min</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Slideshow State -->
+                                        <div class="screen-slideshow" id="screenSlideshow">
+                                            <div class="slideshow-cinematic" id="slideshowCinematic">
+                                                <!-- Slides injected by JS -->
+                                            </div>
+                                            <div class="slideshow-nav-overlay">
+                                                <button class="slide-nav-btn slide-prev" id="slidePrev"><i class="fas fa-chevron-left"></i></button>
+                                                <button class="slide-nav-btn slide-next" id="slideNext"><i class="fas fa-chevron-right"></i></button>
+                                            </div>
+                                            <div class="slideshow-bottom-bar">
+                                                <div class="slide-progress-dots" id="slideDots"></div>
+                                                <div class="slide-counter" id="slideCounter">1 / 6</div>
+                                                <button class="slide-exit-btn" id="slideExit"><i class="fas fa-times"></i> Exit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tv-stand"></div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -245,77 +270,20 @@
             <section id="about" class="page-section">
                 <h1>About TechVision</h1>
                 <p>Pioneering energy-efficient television solutions for a sustainable Australian future.</p>
-                
                 <div class="about-grid">
-                    <div class="about-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Our Mission</h3>
-                        <p>To empower Australian households with premium entertainment technology that significantly reduces energy consumption, lowers electricity bills, and minimizes environmental impact.</p>
-                    </div>
-                    <div class="about-card">
-                        <i class="fas fa-leaf"></i>
-                        <h3>Sustainability Commitment</h3>
-                        <p>We partner exclusively with manufacturers who prioritize energy efficiency, use eco-friendly materials, and maintain strict environmental standards in production.</p>
-                    </div>
-                    <div class="about-card">
-                        <i class="fas fa-hand-holding-heart"></i>
-                        <h3>Customer Empowerment</h3>
-                        <p>Providing expert guidance and transparent energy ratings to help you make informed decisions about the most efficient TVs for your home and lifestyle.</p>
-                    </div>
+                    <div class="about-card"><i class="fas fa-chart-line"></i><h3>Our Mission</h3><p>To empower Australian households with premium entertainment technology that significantly reduces energy consumption.</p></div>
+                    <div class="about-card"><i class="fas fa-leaf"></i><h3>Sustainability Commitment</h3><p>We partner exclusively with manufacturers who prioritize energy efficiency and use eco-friendly materials.</p></div>
+                    <div class="about-card"><i class="fas fa-hand-holding-heart"></i><h3>Customer Empowerment</h3><p>Providing expert guidance and transparent energy ratings to help you make informed decisions.</p></div>
                 </div>
-                
                 <div class="energy-impact">
                     <h2>Our Environmental Impact</h2>
                     <div class="impact-stats">
-                        <div class="impact-card">
-                            <i class="fas fa-tv"></i>
-                            <h3>15,000+</h3>
-                            <p>Energy-Star TVs Sold</p>
-                        </div>
-                        <div class="impact-card">
-                            <i class="fas fa-bolt"></i>
-                            <h3>850,000+</h3>
-                            <p>kWh Saved Annually</p>
-                        </div>
-                        <div class="impact-card">
-                            <i class="fas fa-tree"></i>
-                            <h3>340+</h3>
-                            <p>Trees Equivalent Saved</p>
-                        </div>
-                        <div class="impact-card">
-                            <i class="fas fa-coins"></i>
-                            <h3>$250,000+</h3>
-                            <p>Customer Savings Yearly</p>
-                        </div>
+                        <div class="impact-card"><i class="fas fa-tv"></i><h3>15,000+</h3><p>Energy-Star TVs Sold</p></div>
+                        <div class="impact-card"><i class="fas fa-bolt"></i><h3>850,000+</h3><p>kWh Saved Annually</p></div>
+                        <div class="impact-card"><i class="fas fa-tree"></i><h3>340+</h3><p>Trees Equivalent Saved</p></div>
+                        <div class="impact-card"><i class="fas fa-coins"></i><h3>$250,000+</h3><p>Customer Savings Yearly</p></div>
                     </div>
                 </div>
-                
-                <div class="energy-commitment">
-                    <h2><i class="fas fa-star-of-life"></i> Our Energy Efficiency Promise</h2>
-                    <div class="commitment-grid">
-                        <div class="commitment-item">
-                            <i class="fas fa-certificate"></i>
-                            <h3>6-Star Rating Focus</h3>
-                            <p>We prioritize TVs with 5-6 star energy ratings, ensuring maximum efficiency for every Australian home.</p>
-                        </div>
-                        <div class="commitment-item">
-                            <i class="fas fa-chalkboard-user"></i>
-                            <h3>Education & Awareness</h3>
-                            <p>Free resources and guides to help you understand and reduce your TV power consumption.</p>
-                        </div>
-                        <div class="commitment-item">
-                            <i class="fas fa-recycle"></i>
-                            <h3>E-Waste Reduction</h3>
-                            <p>Partnering with recycling programs to responsibly dispose of old, inefficient televisions.</p>
-                        </div>
-                        <div class="commitment-item">
-                            <i class="fas fa-charging-station"></i>
-                            <h3>Carbon Offset Program</h3>
-                            <p>Every TV sold contributes to Australian reforestation and renewable energy projects.</p>
-                        </div>
-                    </div>
-                </div>
-                
                 <div class="contact-info">
                     <h2>Get in Touch</h2>
                     <p><i class="fas fa-envelope"></i> green@techvision.com.au</p>
