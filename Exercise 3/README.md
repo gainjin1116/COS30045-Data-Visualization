@@ -14,26 +14,11 @@ You must use the **Exercise 3 folder in your existing forked repository** and re
 
 ### Audience
 
-The target audience for this visualisation includes:
-
-- Consumers interested in **energy-efficient televisions**
-- Policy makers and regulators interested in **energy consumption trends**
-- Researchers studying **energy efficiency in consumer electronics**
-
-These audiences are interested in understanding how **television energy consumption varies across models, sizes, and technologies**, and how these factors influence overall energy usage.
+The target audience consists primarily of Australian tech consumers and sustainability researchers who require a clear understanding of the current market landscape. By utilizing a "gaming-console" interface and relatable character personas like the Capybara and Gecko, the visualization lowers the barrier to entry for non-technical users. This allows both casual shoppers and policy analysts to intuitively explore how physical specifications—like screen technology and brand variety—impact the availability of energy-efficient options in the real world.
 
 ### Story Overview
 
-This visualisation explores patterns in **TV energy consumption** across different television models and specifications.
-
-The goal is to help viewers understand:
-
-- How energy consumption varies between television models
-- The relationship between **screen size and power consumption**
-- How **energy efficiency ratings** impact energy usage
-- Trends that may help consumers choose more **energy-efficient televisions**
-
-The website presents these insights through visualisations and explanatory text that guide the viewer through the data.
+The TECHVISION narrative is structured as an interactive "Chapter" based journey that demystifies television energy data. The story begins by establishing market standards through a technology-focused quest, then transitions into a brand-comparison leaderboard to highlight manufacturer variety. By following our character leads through these visual milestones, viewers gain actionable insights into the trade-offs between screen size, technology types, and energy ratings, ultimately empowering them to make data-driven purchasing decisions.
 
 ---
 
@@ -41,17 +26,16 @@ The website presents these insights through visualisations and explanatory text 
 
 ### Data Source
 
-The dataset used in this project contains information about **television models and their energy consumption characteristics**, including power usage, screen size, technology type, and efficiency ratings.
+The dataset comprises over **1,100 television models** registered in the Australian market. Specifically for this analysis, I focused on the Screen_Tech attribute to identify market trends and the Brand_Reg attribute to evaluate manufacturer variety.
 
-The dataset was provided as part of the course materials.
 
 ### Data Processing
 
-Before creating visualisations, the dataset was processed to ensure it was suitable for analysis. This included:
-
-- Cleaning missing or inconsistent values
-- Selecting relevant attributes for visualisation
-- Organising the data into formats suitable for web visualisation
+To make the data work for my visualisations, I performed the following technical steps in KNIME:
+1. **Filtering:** Removed incomplete entries to ensure the Pie Chart for screen technology represented a true $100\%$ of the valid market sample.
+2. **Aggregation:** Used GroupBy nodes to count the frequency of models. For example, for Question 3, I aggregated the data by Brand Name and performed a count on Model_No to identify the market leaders.
+3. **Sorting:** Applied a Sorter node to the brand data so the Bar Chart would display a clear "Leaderboard" from highest to lowest variety.
+4. **Formatting:** Converted technical codes into readable strings (e.g., ensuring "LCD(LED)" was clearly labeled) for better user accessibility on the dashboard.
 
 ### Privacy
 
@@ -59,48 +43,57 @@ The dataset does not contain any **personal or sensitive information**. It focus
 
 ### Accuracy and Limitations
 
-While the dataset provides useful information about TV energy consumption, there are some limitations:
+While the data is robust, there are specific limitations to keep in mind for my chosen questions:
 
-- The dataset may not include **all available television models**
-- Some information may be **outdated or incomplete**
-- Energy consumption may vary depending on **real-world usage conditions**
+- **Brand Variety:** A high number of models (Q3) doesn't always mean a brand is the "best"; it simply indicates they have a larger catalogue of registered products.
 
-These factors should be considered when interpreting the visualisations.
+- **Tech Categories:** The "LCD" category is very broad. In a real-world scenario, this could be further broken down into sub-technologies like Mini-LED or QLED, which may not be fully distinguished in this specific dataset.
 
 ### Ethics
 
-When presenting data visualisations, it is important to ensure that the information is represented **accurately and responsibly**.
+For this project, I ensured ethical representation by:
 
-This project follows ethical data visualisation practices by:
+- **Proportional Scaling:** In the Pie Chart (Q1), I ensured the slices accurately represent the percentage of the market without using "3D effects" that could make smaller categories look larger than they are.
 
-- Avoiding misleading visual representations
-- Clearly explaining the context of the data
-- Presenting information transparently so viewers can interpret the results correctly
+- **Fair Ranking:** In the Brand Bar Chart (Q3), I included all brands found in the dataset, not just the top 5, to avoid "cherry-picking" data and to give a fair view of the entire Australian market.
 
 ---
 
 ## AI Declaration
 
-Artificial Intelligence (AI) tools may have been used to assist with aspects of this assignment, such as:
-
-- Generating example code
-- Improving code structure
-- Assisting with documentation writing
-
-All AI-generated assistance was reviewed, modified where necessary, and integrated responsibly into the project.
+Throughout the development of this project, artificial intelligence tools were utilized to assist in conceptualizing and designing the interactive storyboard feature. Specifically, AI was employed to generate the foundational HTML, CSS, and JavaScript code required to build a simulated television interface with a functioning remote control and a cinematic, game-console-style slideshow system. The AI also provided guidance on structuring complex CSS layouts, managing state transitions for the TV power and menu screens, and optimizing the user experience for both desktop and mobile responsiveness. All AI-generated code and design suggestions were carefully reviewed, thoroughly tested, and manually refined to ensure they aligned with the project's specific functional requirements and visual standards.
 
 ---
 
 ## Website Storytelling
 
-The website has been updated to communicate a **data-driven story** based on the TV energy consumption dataset.
+The website has been updated to communicate a data-driven story based on the TV energy consumption dataset through an interactive, character-led journey.
 
-The website includes:
+1. Interactive Interface Design 
+- The website is designed for interactive storyboard telling based one Q1 and Q3, moving away from static reports to a dynamic "Chapter" based experience.
 
-- Visualisations that present key insights from the dataset
-- Text explanations that help readers understand the meaning of the visualisations
-- Context that connects the data to real-world implications
+- User Engagement: As seen in the main interface, users can toggle between Chapter 1 (Market Trends) and Chapter 2 (Brand Variety) using a remote-control style sidebar.
 
-The aim is to guide the viewer through the data in a way that is **informative, engaging, and easy to understand**.
+- Gamified Navigation: Features like the "Power Button," "Back" functionality, and progress trackers (1/6) ensure the user feels in control of the story, reducing the complexity of the data analysis.
+
+2. Character-Led Narratives (The User Personas)
+To make the data relatable, the story is told through two distinct "shoppers" navigating the Australian market:
+
+Chapter 1: The Technology Quest (Q1): - I use a Capybara character who is visually "Overwhelmed by Choices".
+- The story guides him through an interactive Pie Chart that "glows" with market frequency data (Panel 3).
+- Insight: By the end of the journey, the character moves from confusion to confidence, realizing that while OLED is "Premium," LCD(LED) is the "Most Popular" and "Accessible" standard.
+
+Chapter 2: The Brand Leaderboard (Q3): - A Gecko character takes over to solve the problem of variety.
+- The narrative uses a "Trophy" metaphor (Panel 1) to identify market leaders.
+- Insight: Through a 3D-style Bar Chart, the Gecko discovers that SAMSUNG is the "King of Choice" with 731 models. The story ends with the Gecko successfully choosing a TV, representing a completed "Customer Journey."
+
+3. Visual Storytelling Techniques
+To ensure the data is informative and easy to understand, the website employs specific visual cues:
+
+- Holographic Data: Charts are presented as "holograms" within the characters' world, making the statistics feel like part of a live environment.
+
+- Comparison Scales: As shown in the Gecko’s story, a "Weight Scale" is used to visually compare Samsung’s 731 models against smaller competitors like Kogan, making the scale of the data instantly clear without reading raw numbers.
+
+- Annotated Success: Every story ends with a "Checklist" or "Trophy" icon, signaling to the viewer that the data has successfully solved the initial problem.
 
 
